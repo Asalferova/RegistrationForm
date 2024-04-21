@@ -1,0 +1,212 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+:root {
+  --header-bg-color: rgb(79 79 79);
+  --header-text-color: #f0f0f0;
+  --progress-value-bg-color: #5c5c5c;
+  --progress-bar-moz-bg-color: #636363;
+  --form-bg-color: #7777778a;
+  --form-input-border-color: #ccc;
+  --submit-button-text-color: white;
+  --submit-button-hover-bg-color: rgb(0 0 0 / 39%);
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  height: 100%;
+  background-image: url("../img/background.png");
+}
+
+.page-wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main.main {
+  flex: 1 1 auto;
+}
+
+header.header {
+  background-color: var(--header-bg-color);
+  color: var(--header-text-color);
+  padding: 10px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.progress {
+  position: absolute;
+  top: -5%;
+  left: 20px;
+  right: 20px;
+  width: 50%;
+  max-width: 800px;
+  margin: auto;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.progress::-webkit-progress-bar {
+  background-color: var(--form-bg-color);
+  border-radius: 10px;
+}
+
+.progress::-webkit-progress-value {
+  background-color: var(--progress-value-bg-color);
+  transition: width 0.3s ease;
+  border-radius: 10px;
+}
+
+.progress::-moz-progress-bar {
+  background-color: var(--progress-bar-moz-bg-color);
+  transition: width 0.5s ease;
+  border-radius: 10px;
+}
+
+.form {
+  position: relative;
+  max-width: 35%;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: var(--form-bg-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form__login {
+  max-width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 10%;
+  gap: 20px;
+}
+
+.form__label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form__input,
+.form__select {
+  padding: 10px;
+  margin-bottom: 5px;
+  border: 1px solid var(--form-input-border-color);
+  border-radius: 4px;
+  width: 95%;
+  margin-top: 20px;
+}
+
+.form__input_type_file {
+  padding: 5px;
+}
+
+.form__checkbox {
+  margin: 0 10px 20px 0;
+}
+
+.form__options {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.form__option {
+  margin-bottom: 10px;
+}
+
+.form__submit-button {
+  padding: 10px 20px;
+  background-color: var(--header-bg-color);
+  color: var(--submit-button-text-color);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btnLogin {
+  margin-top: 10px;
+  width: 90%;
+}
+
+.form__submit-button:hover {
+  background-color: var(--submit-button-hover-bg-color);
+}
+
+.loader {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+footer.footer {
+  background-color: var(--header-bg-color);
+  padding: 20px 30px;
+}
+
+.welcome-title {
+  color: var(--header-bg-color);
+  animation: scaleIn 2s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+@keyframes scaleIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Медиа-запросы */
+@media (max-width: 1200px) {
+  .form {
+    max-width: 50%;
+  }
+  .form__login {
+    max-width: 45%;
+  }
+}
+
+@media (max-width: 900px) {
+  .form {
+    max-width: 80%;
+  }
+  .form__login {
+    max-width: 65%;
+  }
+}
+
+@media (max-width: 600px) {
+  .form {
+    max-width: 95%;
+  }
+  .form__login {
+    max-width: 85%;
+  }
+}
