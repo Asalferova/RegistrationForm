@@ -4,7 +4,9 @@
 
 Этот проект представляет собой систему авторизации и регистрации пользователей, написанную на чистом JavaScript. Он включает в себя валидацию формы, обработку ошибок, работу с LocalStorage и отправку данных на сервер.
 
-   **Технологии**: HTML, CSS, JavaScript, Fetch API, HTTPBin API.
+   **Технологии**: <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" height="50px" width="50px">    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" height="50px" width="50px"/>    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" height="50px" width="50px"/>
+   Fetch API,
+   HTTPBin API.
 
    Основные функции:
 
