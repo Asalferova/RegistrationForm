@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./img/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Registration Form</title>
+</head>
+
+<body>
+    <div class="page-wrapper">
+        <header class="header">
+            <h1>Форма регистрации</h1>
+        </header>
+        <main class="main">
+            <form class="form" id="my-form" name="myForm" action="https://httpbin.org/post" method="POST">
+                <progress value="0" max="100" class="progress"></progress>
+                <label class="form__label" for="name">
+                    Ваше имя:
+                    <input type="text" name="name" class="form__input form__input_type_username" id="name"
+                        placeholder="Илон Маск" required autofocus>
+                </label>
+
+                <label class="form__label" for="pass">
+                    Пароль:
+                    <input type="password" name="pass" id="pass" class="form__input form__input_type_password"
+                        pattern="\d{3,}" title="Пароль должен содержать только цифры (не менее трёх)" placeholder="123"
+                        required>
+                </label>
+
+                <label class="form__label" for="email">
+                    Почта:
+                    <input type="email" name="email" id="email" class="form__input form__input_type_email"
+                        placeholder="elon@musk.com" required>
+                </label>
+
+
+
+                <label class="form__label" for="do">
+                    Чем любите заниматься?
+                    <select name="do" id="do" class="form__select" required>
+                        <option value="">Выберите</option>
+                        <option value="movie">Смотреть фильмы</option>
+                        <option value="read">Читать</option>
+                        <option value="sport">Заниматься спортом</option>
+                        <option value="other">Ничего из этого</option>
+                    </select>
+                </label>
+
+                <label class="form__label" for="loveCats">
+                    Я люблю котиков
+                    <input type="checkbox" name="loveCats" id="loveCats" class="form__checkbox" value="1" required>
+                </label>
+
+                <label class="form__label" for="photo">
+                    Фото:
+                    <input type="file" accept="image/jpeg" name="photo" id="photo" class=" form__input_type_file"
+                        required>
+                </label>
+
+                <p class="form__question">Какое ваше любимое животное?</p>
+                <div class="form__options">
+                    <label class="form__option"> <input type="radio" name="radio" value="Собака" required /> Собака
+                    </label>
+                    <label class="form__option"> <input type="radio" name="radio" value="Кот" required /> Кот </label>
+                    <label class="form__option"><input type="radio" name="radio" value="Попугай" required />
+                        Попугай</label>
+                    <label class="form__option"> <input type="radio" name="radio" value="Жираф" required />Жираф</label>
+                    <label class="form__option"> <input type="radio" name="radio" value="Змея" required /> Змея </label>
+                    <label class="form__option"><input type="radio" name="radio" value="Лиса" required /> Лиса</label>
+                </div>
+
+                <button type="submit" class="form__submit-button">Зарегистрироваться</button>
+                <div id="loader" class="loader hidden">Подождите...</div>
+            </form>
+        </main>
+
+
+        <footer class="footer">
+        </footer>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+
+</html>
