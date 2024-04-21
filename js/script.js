@@ -3,6 +3,28 @@
 // Объявление переменных
 const formEl = document.forms.myForm;
 const progressBar = document.querySelector('.progress');
+let userData = JSON.parse(localStorage.getItem('userData')) || {};
+
+// Функция для сохранения данных в LocalStorage
+function saveDataToLocalStorage(key, data) {
+    localStorage.setItem(key, JSON.stringify(data));
+};
+
+// Функция для регистрации пользователя
+function registerUser(login, password) {
+    userData = { username: login, password: password };
+    saveDataToLocalStorage('userData', userData);
+    window.location.href = './login.html';
+};
+
+// Функция для проверки авторизации пользователя
+function checkAuthorization(login, password) {
+    if (userData && userData.username === login && userData.password === password) {
+        window.location.href = './hello.html';
+    } else {
+        alert('Неверный логин или пароль');
+    }
+};
 
 // Функция для пересчета прогресса заполнения формы
 function recalculateProgress() {
@@ -91,6 +113,9 @@ async function handleFormSubmit(event) {
       if (status === 200) {
         onSuccess(event.target);
       }
+    const login = document.querySelector('.form__input_type_username').value;
+    const password = document.querySelector('.form__input_type_password').value;
+    registerUser(login, password);
     } catch (error) {
       alert('Произошла ошибка при отправке данных, попробуйте позже: ' + error.message);
     } finally {
@@ -108,5 +133,15 @@ const applicantForm = document.getElementById('my-form');
 if(applicantForm){
     applicantForm.addEventListener('submit', checkValidity);
     applicantForm.addEventListener('submit', handleFormSubmit);
+};
+
+const btnLogin = document.querySelector('.btnLogin');
+if (btnLogin) {
+    btnLogin.addEventListener('click', (e) => {
+        e.preventDefault();
+        const login = document.querySelector('.username-log').value;
+        const password = document.querySelector('.password-log').value;
+        checkAuthorization(login, password);
+    });
 };
 
